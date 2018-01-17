@@ -9,11 +9,10 @@
 import UIKit
 import Alamofire
 
-
 class AlamofireDemo: UIViewController {
 
     var imageView:UIImageView?
-    var fileManager = FileManager.default
+    var fileManager:FileManager?
     
     var downloadRequest:DownloadRequest!
     var progress:UIProgressView!
@@ -22,7 +21,7 @@ class AlamofireDemo: UIViewController {
     var cancelledData:Data!
     var cancelDownImage:UIButton!
     var continueButton:UIButton!
-    
+    var currencyButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +36,7 @@ class AlamofireDemo: UIViewController {
         self.view.addSubview(downImageButton)
         
         cancelDownImage = UIButton.init(type: UIButtonType.roundedRect)
-        cancelDownImage.frame = CGRect.init(x: 400, y: 100, width: 100, height: 40)
+        cancelDownImage.frame = CGRect.init(x: 300, y: 100, width: 100, height: 40)
         cancelDownImage.setTitle("取消下载", for: UIControlState.normal)
         cancelDownImage.setTitleColor(UIColor.white, for: UIControlState.normal)
         cancelDownImage.addTarget(self, action: #selector(cancelDownImageAction), for:UIControlEvents.touchUpInside)
@@ -46,12 +45,21 @@ class AlamofireDemo: UIViewController {
         
         
         continueButton = UIButton.init(type: UIButtonType.roundedRect)
-        continueButton.frame = CGRect.init(x: 600, y: 100, width: 100, height: 40)
+        continueButton.frame = CGRect.init(x: 500, y: 100, width: 100, height: 40)
         continueButton.setTitle("继续下载", for: UIControlState.normal)
         continueButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         continueButton.addTarget(self, action: #selector(continueButtonAction), for:UIControlEvents.touchUpInside)
         continueButton.backgroundColor = UIColor.red
         self.view.addSubview(continueButton)
+        
+        currencyButton = UIButton.init(type: UIButtonType.roundedRect)
+        currencyButton.frame = CGRect.init(x: 700, y: 100, width: 100, height: 40)
+        currencyButton.setTitle("当前网络", for: UIControlState.normal)
+        currencyButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+        currencyButton.addTarget(self, action: #selector(checkNetwok), for:UIControlEvents.touchUpInside)
+        currencyButton.backgroundColor = UIColor.red
+        self.view.addSubview(currencyButton)
+        
         
         imageView = UIImageView.init(frame: CGRect.init(x: 100, y: 200, width: 200, height: 200))
         self.view.addSubview(imageView!)
@@ -59,19 +67,23 @@ class AlamofireDemo: UIViewController {
         cancelledData = Data()
         progress =  UIProgressView.init(frame: CGRect.init(x: 100, y: 300, width: 500, height: 40))
         self.view.addSubview(progress)
+        progress.isHidden = true
         
         progressLabel = UILabel.init(frame: CGRect.init(x: 100, y: 300, width: 200, height: 30))
         progressLabel.textColor = UIColor.green
+        
         self.view.addSubview(progressLabel)
     }
     
     @objc func downExample() {
-       let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory, in: .userDomainMask)
+        progress.isHidden = false
+        
+        let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory, in: .userDomainMask)
         self.downloadRequest =  Alamofire.download(
             "http://dldir1.qq.com/qqfile/qq/QQ7.9/16621/QQ7.9.exe", to: destination)
         self.downloadRequest.downloadProgress(queue: DispatchQueue.main,
-                                              closure: downloadProgress) //下载进度
-        self.downloadRequest.responseData(completionHandler: downloadResponse) //下载停止响应
+                                              closure: downloadProgress)
+        self.downloadRequest.responseData(completionHandler: downloadResponse)
         
     }
     
@@ -89,26 +101,23 @@ class AlamofireDemo: UIViewController {
             self.downloadRequest = Alamofire.download(resumingWith: cancelledData,
                                                       to: destination)
             self.downloadRequest.downloadProgress(queue: DispatchQueue.main,
-                                                  closure: downloadProgress) //下载进度
-            self.downloadRequest.responseData(completionHandler: downloadResponse) //下载停止响应
+                                                  closure: downloadProgress)
+            self.downloadRequest.responseData(completionHandler: downloadResponse)
         }
         
     }
     
     func downloadProgress(progress: Progress) {
-        //进度条更新
         self.progress.setProgress(Float(progress.fractionCompleted), animated:true)
         let f = progress.fractionCompleted * 100;
         let prog = String(format:"%2.f",f)
         self.progressLabel.text = "下载进度:\(prog)%"
     }
-    
-    //下载停止响应（不管成功或者失败）
+
     func downloadResponse(response: DownloadResponse<Data>) {
         switch response.result {
         case .success(let data):
-            //self.image = UIImage(data: data)
-            print("文件下载完毕 data大小: \(data.count)")
+            self.showInformation(message: "下载文件成功")
         case .failure:
             print("下载失败")
             self.cancelledData = response.resumeData //意外终止的话，把已下载的数据储存起来
@@ -129,6 +138,34 @@ class AlamofireDemo: UIViewController {
         }
     }
     
+   @objc func checkNetwok(){
+        let NetworkManager = NetworkReachabilityManager(host: "www.baidu.com")
+        NetworkManager!.listener = { status in
+            
+            switch status {
+                case .notReachable:
+                    self.showInformation(message: "网络不可见")
+                case .unknown:
+                     self.showInformation(message: "网络未知")
+                case .reachable(NetworkReachabilityManager.ConnectionType.ethernetOrWiFi):
+                     self.showInformation(message: "WiFi")
+                case .reachable(NetworkReachabilityManager.ConnectionType.wwan):
+                    self.showInformation(message: "手机蜂窝网络")
+        
+            }
+       }
+        NetworkManager!.startListening()
+    }
+    
+    func showInformation(message:String) {
+        let alertController = UIAlertController.init(title: "当前网络是:",
+                                                   message: message,
+                                            preferredStyle: UIAlertControllerStyle.alert)
+        let ok = UIAlertAction.init(title: "ok", style: UIAlertActionStyle.default, handler: nil)
+        alertController.addAction(ok)
+        self.present(alertController, animated: true, completion: nil)
+    
+    }
     //自定义报文头
     func customHeader(){
         let headers :HTTPHeaders = [

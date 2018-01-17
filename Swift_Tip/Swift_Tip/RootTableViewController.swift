@@ -15,7 +15,7 @@ enum ViewControllerType:String {
     case four = "其他功能"
 }
 
-class TableViewController: UITableViewController {
+class RootTableViewController: UITableViewController {
     var dataList = [String]()
     let identifier = "iOS CELL iDENTIFIER"
     

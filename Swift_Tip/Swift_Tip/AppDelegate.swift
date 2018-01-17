@@ -18,32 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let _tableViewController:UITableViewController = TableViewController()
+        let _tableViewController:RootTableViewController = RootTableViewController()
         
         let nav:UINavigationController = UINavigationController.init(rootViewController: _tableViewController)
         
         self.window?.rootViewController = nav
-        
-        var statusMessage:String?
-        
-     
-        
-        
-//        let NetworkManager = NetworkReachabilityManager(host: "www.baidu.com")
-//        NetworkManager!.listener = { status in
-//            switch status {
-//            case .notReachable:
-//                self.checkNetwork(networkStatus: "网络不可见")
-//            case .unknown:
-//                self.checkNetwork(networkStatus: "未知网络")
-//            case .reachable(NetworkReachabilityManager.ConnectionType.ethernetOrWiFi):
-//                self.checkNetwork(networkStatus: "当前wifi网络")
-//            case .reachable(NetworkReachabilityManager.ConnectionType.wwan):
-//                self.checkNetwork(networkStatus: "手机蜂窝网络")
-//                
-//            }
-//        }
-//        NetworkManager!.startListening()
         
         self.window!.backgroundColor = UIColor.white
         self.window!.makeKeyAndVisible()
