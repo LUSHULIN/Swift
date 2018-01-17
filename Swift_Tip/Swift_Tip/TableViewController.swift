@@ -11,7 +11,7 @@ import UIKit
 enum ViewControllerType:String {
     case one = "列表展示"
     case two = "首页"
-    case three = "登陆界面"
+    case three = "Alamofire"
     case four = "其他功能"
 }
 
@@ -23,7 +23,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Swift列表展示"
-        dataList = ["列表展示","首页","登陆界面","其他功能"]
+        dataList = ["列表展示","首页","Alamofire","其他功能"]
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: identifier)
@@ -58,10 +58,16 @@ class TableViewController: UITableViewController {
             let listTable = ListTableView()
             listTable.title = dataList[indexPath.row]
             self.navigationController?.pushViewController(listTable, animated: true)
+            
         case ViewControllerType.two:
             let twoVC:TwoViewController = TwoViewController()
             twoVC.title = dataList[indexPath.row]
             self.navigationController?.pushViewController(twoVC, animated: true)
+            
+        case ViewControllerType.three:
+            let alamofire = AlamofireDemo()
+            alamofire.title = "AlamofireDemo"
+            self.navigationController?.pushViewController(alamofire, animated: true)
             
         default:
             let alertVC = UIAlertController.init(title: "友情提示:", message: "该界面暂未实现", preferredStyle: UIAlertControllerStyle.alert)

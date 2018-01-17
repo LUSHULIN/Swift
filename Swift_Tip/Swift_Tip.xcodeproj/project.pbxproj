@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8384D431C31D298F9248F03A /* Pods_Swift_Tip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D6BFF3B61E1D0286E0CB07 /* Pods_Swift_Tip.framework */; };
+		9644475D200DF90500A88490 /* AlamofireDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644475C200DF90500A88490 /* AlamofireDemo.swift */; };
 		966570C1200D98C8002260FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966570C0200D98C8002260FD /* AppDelegate.swift */; };
 		966570C3200D98C8002260FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966570C2200D98C8002260FD /* Assets.xcassets */; };
 		966570C6200D98C8002260FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 966570C4200D98C8002260FD /* LaunchScreen.storyboard */; };
 		966570CE200D98DE002260FD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966570CD200D98DE002260FD /* TableViewController.swift */; };
 		96A176A4200DA4EA00D65220 /* ListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A176A3200DA4EA00D65220 /* ListTableView.swift */; };
 		96A176A6200DA4F500D65220 /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A176A5200DA4F500D65220 /* TwoViewController.swift */; };
-		A9C3ED8522A65E93C45315B1 /* libPods-Swift_Tip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 697B39B5B18275A0A8FE6050 /* libPods-Swift_Tip.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40D6BFF3B61E1D0286E0CB07 /* Pods_Swift_Tip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Tip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		438255977844CE8D19EB537D /* Pods-Swift_Tip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_Tip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_Tip/Pods-Swift_Tip.debug.xcconfig"; sourceTree = "<group>"; };
-		697B39B5B18275A0A8FE6050 /* libPods-Swift_Tip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Swift_Tip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9644475C200DF90500A88490 /* AlamofireDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireDemo.swift; sourceTree = "<group>"; };
 		966570BD200D98C8002260FD /* Swift_Tip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Tip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966570C0200D98C8002260FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966570C2200D98C8002260FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C3ED8522A65E93C45315B1 /* libPods-Swift_Tip.a in Frameworks */,
+				8384D431C31D298F9248F03A /* Pods_Swift_Tip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +47,7 @@
 		42E02402703854A9E81A3E54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				697B39B5B18275A0A8FE6050 /* libPods-Swift_Tip.a */,
+				40D6BFF3B61E1D0286E0CB07 /* Pods_Swift_Tip.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -75,6 +77,7 @@
 				966570CD200D98DE002260FD /* TableViewController.swift */,
 				96A176A3200DA4EA00D65220 /* ListTableView.swift */,
 				96A176A5200DA4F500D65220 /* TwoViewController.swift */,
+				9644475C200DF90500A88490 /* AlamofireDemo.swift */,
 				966570C2200D98C8002260FD /* Assets.xcassets */,
 				966570C4200D98C8002260FD /* LaunchScreen.storyboard */,
 				966570C7200D98C8002260FD /* Info.plist */,
@@ -200,9 +203,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Swift_Tip/Pods-Swift_Tip-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -216,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9644475D200DF90500A88490 /* AlamofireDemo.swift in Sources */,
 				96A176A4200DA4EA00D65220 /* ListTableView.swift in Sources */,
 				966570C1200D98C8002260FD /* AppDelegate.swift in Sources */,
 				966570CE200D98DE002260FD /* TableViewController.swift in Sources */,
@@ -350,6 +357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QZYSQ2396;
 				INFOPLIST_FILE = Swift_Tip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Swift-Tip";
@@ -365,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QZYSQ2396;
 				INFOPLIST_FILE = Swift_Tip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Swift-Tip";

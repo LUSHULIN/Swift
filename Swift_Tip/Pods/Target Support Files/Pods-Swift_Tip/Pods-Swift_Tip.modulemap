@@ -1,0 +1,6 @@
+framework module Pods_Swift_Tip {
+  umbrella header "Pods-Swift_Tip-umbrella.h"
+
+  export *
+  module * { export * }
+}
