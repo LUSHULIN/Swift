@@ -10,9 +10,9 @@ import UIKit
 
 enum ViewControllerType:String {
     case one = "列表展示"
-    case two = "首页"
-    case three = "Alamofire"
-    case four = "其他功能"
+    case two = "Alamofire官方文档示例"
+    case three = "Alamofire文件下载示例"
+    case four = "Alamofire证书校验"
 }
 
 class RootTableViewController: UITableViewController {
@@ -23,7 +23,7 @@ class RootTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Swift列表展示"
-        dataList = ["列表展示","首页","Alamofire","其他功能"]
+        dataList = ["列表展示","Alamofire官方文档示例","Alamofire文件下载示例","Alamofire证书校验"]
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: identifier)
@@ -60,15 +60,19 @@ class RootTableViewController: UITableViewController {
             self.navigationController?.pushViewController(listTable, animated: true)
             
         case ViewControllerType.two:
-            let twoVC:TwoViewController = TwoViewController()
+            let twoVC:AlamofireDocument = AlamofireDocument()
             twoVC.title = dataList[indexPath.row]
             self.navigationController?.pushViewController(twoVC, animated: true)
             
         case ViewControllerType.three:
             let alamofire = AlamofireDemo()
-            alamofire.title = "AlamofireDemo"
+            alamofire.title = "Alamofire文件下载示例"
             self.navigationController?.pushViewController(alamofire, animated: true)
             
+        case ViewControllerType.four:
+            let checkCer = CheckCertificate()
+            checkCer.title = "证书验证"
+            self.navigationController?.pushViewController(checkCer, animated: true)
         default:
             let alertVC = UIAlertController.init(title: "友情提示:", message: "该界面暂未实现", preferredStyle: UIAlertControllerStyle.alert)
             let ok = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler:{(okAction:UIAlertAction) in

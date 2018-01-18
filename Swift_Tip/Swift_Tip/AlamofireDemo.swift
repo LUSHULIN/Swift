@@ -116,7 +116,7 @@ class AlamofireDemo: UIViewController {
 
     func downloadResponse(response: DownloadResponse<Data>) {
         switch response.result {
-        case .success(let data):
+        case .success:
             self.showInformation(message: "下载文件成功")
         case .failure:
             print("下载失败")

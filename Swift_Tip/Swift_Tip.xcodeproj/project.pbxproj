@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8384D431C31D298F9248F03A /* Pods_Swift_Tip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D6BFF3B61E1D0286E0CB07 /* Pods_Swift_Tip.framework */; };
+		962DB87620104C60002BF409 /* AlamofireDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DB87520104C60002BF409 /* AlamofireDocument.swift */; };
+		962DB87820107363002BF409 /* ImageRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DB87720107363002BF409 /* ImageRequestor.swift */; };
+		962DB87A20108880002BF409 /* CheckCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DB87920108880002BF409 /* CheckCertificate.swift */; };
+		962DB87D20108DF6002BF409 /* client_uat_indo.cer in Resources */ = {isa = PBXBuildFile; fileRef = 962DB87C20108B72002BF409 /* client_uat_indo.cer */; };
 		9644475D200DF90500A88490 /* AlamofireDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644475C200DF90500A88490 /* AlamofireDemo.swift */; };
 		966570C1200D98C8002260FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966570C0200D98C8002260FD /* AppDelegate.swift */; };
 		966570C3200D98C8002260FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966570C2200D98C8002260FD /* Assets.xcassets */; };
@@ -20,6 +24,10 @@
 /* Begin PBXFileReference section */
 		40D6BFF3B61E1D0286E0CB07 /* Pods_Swift_Tip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Tip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		438255977844CE8D19EB537D /* Pods-Swift_Tip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_Tip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_Tip/Pods-Swift_Tip.debug.xcconfig"; sourceTree = "<group>"; };
+		962DB87520104C60002BF409 /* AlamofireDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireDocument.swift; sourceTree = "<group>"; };
+		962DB87720107363002BF409 /* ImageRequestor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestor.swift; sourceTree = "<group>"; };
+		962DB87920108880002BF409 /* CheckCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCertificate.swift; sourceTree = "<group>"; };
+		962DB87C20108B72002BF409 /* client_uat_indo.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = client_uat_indo.cer; sourceTree = "<group>"; };
 		9644475C200DF90500A88490 /* AlamofireDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireDemo.swift; sourceTree = "<group>"; };
 		966570BD200D98C8002260FD /* Swift_Tip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Tip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966570C0200D98C8002260FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +60,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		962DB87B20108B4B002BF409 /* Cer */ = {
+			isa = PBXGroup;
+			children = (
+				962DB87C20108B72002BF409 /* client_uat_indo.cer */,
+			);
+			path = Cer;
+			sourceTree = "<group>";
+		};
 		966570B4200D98C8002260FD = {
 			isa = PBXGroup;
 			children = (
@@ -73,11 +89,15 @@
 		966570BF200D98C8002260FD /* Swift_Tip */ = {
 			isa = PBXGroup;
 			children = (
+				962DB87B20108B4B002BF409 /* Cer */,
 				966570C0200D98C8002260FD /* AppDelegate.swift */,
 				966570CD200D98DE002260FD /* RootTableViewController.swift */,
 				96A176A3200DA4EA00D65220 /* ListTableView.swift */,
 				96A176A5200DA4F500D65220 /* TwoViewController.swift */,
 				9644475C200DF90500A88490 /* AlamofireDemo.swift */,
+				962DB87520104C60002BF409 /* AlamofireDocument.swift */,
+				962DB87720107363002BF409 /* ImageRequestor.swift */,
+				962DB87920108880002BF409 /* CheckCertificate.swift */,
 				966570C2200D98C8002260FD /* Assets.xcassets */,
 				966570C4200D98C8002260FD /* LaunchScreen.storyboard */,
 				966570C7200D98C8002260FD /* Info.plist */,
@@ -156,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962DB87D20108DF6002BF409 /* client_uat_indo.cer in Resources */,
 				966570C3200D98C8002260FD /* Assets.xcassets in Resources */,
 				966570C6200D98C8002260FD /* LaunchScreen.storyboard in Resources */,
 			);
@@ -224,9 +245,12 @@
 			files = (
 				9644475D200DF90500A88490 /* AlamofireDemo.swift in Sources */,
 				96A176A4200DA4EA00D65220 /* ListTableView.swift in Sources */,
+				962DB87A20108880002BF409 /* CheckCertificate.swift in Sources */,
 				966570C1200D98C8002260FD /* AppDelegate.swift in Sources */,
+				962DB87620104C60002BF409 /* AlamofireDocument.swift in Sources */,
 				966570CE200D98DE002260FD /* RootTableViewController.swift in Sources */,
 				96A176A6200DA4F500D65220 /* TwoViewController.swift in Sources */,
+				962DB87820107363002BF409 /* ImageRequestor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
