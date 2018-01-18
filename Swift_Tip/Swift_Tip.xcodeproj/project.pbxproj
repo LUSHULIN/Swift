@@ -11,7 +11,6 @@
 		962DB87620104C60002BF409 /* AlamofireDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DB87520104C60002BF409 /* AlamofireDocument.swift */; };
 		962DB87820107363002BF409 /* ImageRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DB87720107363002BF409 /* ImageRequestor.swift */; };
 		962DB87A20108880002BF409 /* CheckCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DB87920108880002BF409 /* CheckCertificate.swift */; };
-		962DB87D20108DF6002BF409 /* client_uat_indo.cer in Resources */ = {isa = PBXBuildFile; fileRef = 962DB87C20108B72002BF409 /* client_uat_indo.cer */; };
 		9644475D200DF90500A88490 /* AlamofireDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9644475C200DF90500A88490 /* AlamofireDemo.swift */; };
 		966570C1200D98C8002260FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966570C0200D98C8002260FD /* AppDelegate.swift */; };
 		966570C3200D98C8002260FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966570C2200D98C8002260FD /* Assets.xcassets */; };
@@ -27,7 +26,6 @@
 		962DB87520104C60002BF409 /* AlamofireDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireDocument.swift; sourceTree = "<group>"; };
 		962DB87720107363002BF409 /* ImageRequestor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestor.swift; sourceTree = "<group>"; };
 		962DB87920108880002BF409 /* CheckCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCertificate.swift; sourceTree = "<group>"; };
-		962DB87C20108B72002BF409 /* client_uat_indo.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = client_uat_indo.cer; sourceTree = "<group>"; };
 		9644475C200DF90500A88490 /* AlamofireDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireDemo.swift; sourceTree = "<group>"; };
 		966570BD200D98C8002260FD /* Swift_Tip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Tip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966570C0200D98C8002260FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +61,6 @@
 		962DB87B20108B4B002BF409 /* Cer */ = {
 			isa = PBXGroup;
 			children = (
-				962DB87C20108B72002BF409 /* client_uat_indo.cer */,
 			);
 			path = Cer;
 			sourceTree = "<group>";
@@ -176,7 +173,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				962DB87D20108DF6002BF409 /* client_uat_indo.cer in Resources */,
 				966570C3200D98C8002260FD /* Assets.xcassets in Resources */,
 				966570C6200D98C8002260FD /* LaunchScreen.storyboard in Resources */,
 			);
