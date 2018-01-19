@@ -1,6 +1,9 @@
 platform :ios,'8.0'
-use_frameworks!
+use_framework!
 
 target 'Swift_Tip' do
+    #网络框架
     pod 'Alamofire'
+    #用户指导页
+   pod 'Onboard'
 end
